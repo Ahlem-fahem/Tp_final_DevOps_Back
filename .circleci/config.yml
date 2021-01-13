@@ -55,11 +55,11 @@ jobs:
       # documented at https://circleci.com/docs/2.0/circleci-images/
       - image: postgres:9.6.2-alpine
         environment:
-          POSTGRES_USER: myUsr
-          POSTGRES_PASSOWRD: somePwd 
-          POSTGRES_DB: myUsr
+          POSTGRES_USER: User
+          POSTGRES_PASSOWRD: passwrd
+          POSTGRES_DB: User
 
-    working_directory: ~/repo
+    working_directory: ~/Tp_final_DevOps_Back/autoapp.py
 
     steps:
       - checkout
@@ -79,12 +79,12 @@ jobs:
             flask db upgrade
           environment:
             CONDUIT_SECRET: 'something-really-secret'
-            FLASK_APP: /home/circleci/repo/autoapp.py
-            DATABASE_URL: postgresql://myUsr:somePwd@localhost:5432/myUsr
+            FLASK_APP: C:/Users/pc/PycharmProjects/Tp_final_DevOps_Back/autoapp.py
+            DATABASE_URL: postgresql://User:passwrd@localhost:5432/User
             FLASK_DEBUG: 1
             POSTGRES_USER: postgres
-            POSTGRES_DB: bdtest
-            POSTGRES_PASSWORD: somePwd
+            POSTGRES_DB: db_test
+            POSTGRES_PASSWORD: passwrd
             POSTGRES_PORT: 5432
 
 
@@ -104,11 +104,11 @@ jobs:
           environment:
             CONDUIT_SECRET: 'something-really-secret'
             FLASK_APP: C:/Users/pc/PycharmProjects/Tp_final_DevOps_Back/autoapp.py
-            DATABASE_URL: postgresql://myUsr:somePwd@localhost:5432/myUsr
+            DATABASE_URL: postgresql://User:passwrd@localhost:5432/User
             FLASK_DEBUG: 1
             POSTGRES_USER: postgres
-            POSTGRES_DB: bdtest
-            POSTGRES_PASSWORD: somePwd
+            POSTGRES_DB: db_test
+            POSTGRES_PASSWORD: passwrd
             POSTGRES_PORT: 5432
 
       - save_cache:
