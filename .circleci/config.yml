@@ -15,7 +15,7 @@ jobs:
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/postgres:9.4
 
-    working_directory: ~/repo
+    working_directory: ~/C:/Users/pc/PycharmProjects/Tp_final_DevOps_Back/autoapp.py
 
     steps:
       - checkout
@@ -35,7 +35,7 @@ jobs:
             pip install -r requirements/dev.txt
           environment:
             CONDUIT_SECRET: 'something-really-secret'
-            FLASK_APP: /home/circleci/repo/autoapp.py
+            FLASK_APP: C:/Users/pc/PycharmProjects/Tp_final_DevOps_Back/autoapp.py
             FLASK_DEBUG: 1
 
       - save_cache:
@@ -55,7 +55,7 @@ jobs:
       # documented at https://circleci.com/docs/2.0/circleci-images/
       - image: postgres:9.6.2-alpine
         environment:
-          POSTGRES_USER: myUsr  
+          POSTGRES_USER: myUsr
           POSTGRES_PASSOWRD: somePwd 
           POSTGRES_DB: myUsr
 
@@ -103,7 +103,7 @@ jobs:
             flask test
           environment:
             CONDUIT_SECRET: 'something-really-secret'
-            FLASK_APP: /home/circleci/repo/autoapp.py
+            FLASK_APP: C:/Users/pc/PycharmProjects/Tp_final_DevOps_Back/autoapp.py
             DATABASE_URL: postgresql://myUsr:somePwd@localhost:5432/myUsr
             FLASK_DEBUG: 1
             POSTGRES_USER: postgres
