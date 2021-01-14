@@ -121,11 +121,9 @@ jobs:
       - image: buildpack-deps:trusty
     steps:
       - checkout
-
-
       - run:
           name: Heroku Deploy
-          command: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git main
+          command: git push https://heroku:e4880f8f-0595-42ce-9a50-144e6281e731@git.heroku.com/projectdevopsfinal.git main
   docker-build-and-push:
     working_directory: /dockerapp
     docker:
