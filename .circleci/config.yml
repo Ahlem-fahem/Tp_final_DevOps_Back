@@ -140,11 +140,11 @@ jobs:
           environment:
             CIRCLE_BUILD_NUM: 1
           command: |
-            docker login -e hallouma.fahem1@gmail.com -u ahlemfahem1 -p 231993amira
-            docker tag app ahlemfahem1/backend_final:$CIRCLE_BUILD_NUM
-            docker tag app ahlemfahem1/backend_final:latest
-            docker push ahlemfahem1/backend_final:$CIRCLE_BUILD_NUM
-            docker push ahlemfahem1/backend_final:latest
+            docker login -e $DOCKER_HUB_EMAIL -u $DOCKER_HUB_USER_ID -p $DOCKER_HUB_PWD
+            docker tag app $DOCKER_HUB_USER_ID/backend_final:$CIRCLE_BUILD_NUM
+            docker tag app $DOCKER_HUB_USER_ID/backend_final:latest
+            docker push $DOCKER_HUB_USER_ID/backend_final:$CIRCLE_BUILD_NUM
+            docker push $DOCKER_HUB_USER_ID/backend_final:latest
 workflows:
   version: 2
   build-back-deploy:
