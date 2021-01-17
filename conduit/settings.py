@@ -18,6 +18,8 @@ class Config(object):
     JWT_AUTH_HEADER_PREFIX = 'Token'
     CORS_ORIGIN_WHITELIST = [
         'http://0.0.0.0:4100',
+        'http://0.0.0.0:8080'
+        'https://0.0.0.0:8080'
         'http://localhost:4100',
         'http://0.0.0.0:8000',
         'http://localhost:8000',
